@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mingda.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mingda.com" xmlns:intf="http://mingda.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mingda.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="link">
+    <complexType>
+     <sequence>
+      <element name="idcard" type="xsd:string"/>
+      <element name="membername" type="xsd:string"/>
+      <element name="familyno" type="xsd:string"/>
+      <element name="type" type="xsd:string"/>
+      <element name="date" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="linkResponse">
+    <complexType>
+     <sequence>
+      <element name="linkReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="linkRequest">
+
+      <wsdl:part element="impl:link" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="linkResponse">
+
+      <wsdl:part element="impl:linkResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LinkIn">
+
+      <wsdl:operation name="link">
+
+         <wsdl:input message="impl:linkRequest" name="linkRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:linkResponse" name="linkResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LinkInSoapBinding" type="impl:LinkIn">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="link">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="linkRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="linkResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LinkInService">
+
+      <wsdl:port binding="impl:LinkInSoapBinding" name="LinkIn">
+
+         <wsdlsoap:address location="http://localhost:8080/ybjkws/services/LinkIn"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
