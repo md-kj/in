@@ -1,6 +1,17 @@
 eclipse.preferences.version=1
 encoding//src/org/datacontract/schemas/_2004/_07/WcfMedExchange/CompositeType.java=UTF-8
 encoding//src/org/tempuri/BasicHttpBinding_IService1Stub.java=UTF-8
+encoding//src/org/tempuri/DataSet.java=UTF-8
+encoding//src/org/tempuri/GetInpatientBill.java=UTF-8
+encoding//src/org/tempuri/GetInpatientBillList.java=UTF-8
+encoding//src/org/tempuri/GetInpatientBillListResponse.java=UTF-8
+encoding//src/org/tempuri/GetInpatientBillListResponseGetInpatientBillListResult.java=UTF-8
+encoding//src/org/tempuri/GetInpatientBillResponse.java=UTF-8
+encoding//src/org/tempuri/GetInpatientBillResponseGetInpatientBillResult.java=UTF-8
+encoding//src/org/tempuri/GetInpatientReg.java=UTF-8
+encoding//src/org/tempuri/GetInpatientRegResponse.java=UTF-8
+encoding//src/org/tempuri/GetInpatientRegResponseGetInpatientRegResult.java=UTF-8
+encoding//src/org/tempuri/GetOutpatientBillResponseGetOutpatientBillResult.java=UTF-8
 encoding//src/org/tempuri/IService1.java=UTF-8
 encoding//src/org/tempuri/Service1.java=UTF-8
 encoding//src/org/tempuri/Service1Locator.java=UTF-8
