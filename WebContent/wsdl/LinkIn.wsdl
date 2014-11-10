@@ -22,6 +22,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="link01">
+    <complexType/>
+   </element>
+   <element name="link01Response">
+    <complexType>
+     <sequence>
+      <element name="link01Return" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
@@ -41,6 +51,22 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="link01Response">
+
+      <wsdl:part element="impl:link01Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="link01Request">
+
+      <wsdl:part element="impl:link01" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:portType name="LinkIn">
 
       <wsdl:operation name="link">
@@ -50,6 +76,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:linkResponse" name="linkResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="link01">
+
+         <wsdl:input message="impl:link01Request" name="link01Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:link01Response" name="link01Response">
 
        </wsdl:output>
 
@@ -72,6 +110,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="linkResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="link01">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="link01Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="link01Response">
 
             <wsdlsoap:body use="literal"/>
 

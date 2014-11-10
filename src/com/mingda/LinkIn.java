@@ -19,4 +19,15 @@ public class LinkIn {
 		System.out.println(result);
 		return result;
 	}
+	public String link01() {
+		IService1 iService1 = new IService1Proxy();
+		String result = "";
+		try {
+			result = iService1.getMedicareInfoBatch((long) 1, "2202");
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
+		return result;
+	}
 }

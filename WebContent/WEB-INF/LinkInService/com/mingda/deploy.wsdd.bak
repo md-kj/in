@@ -27,7 +27,9 @@
         <parameter qname="pns:type" xmlns:pns="http://mingda.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:date" xmlns:pns="http://mingda.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="link"/>
+      <operation name="link01" qname="operNS:link01" xmlns:operNS="http://mingda.com" returnQName="retNS:link01Return" xmlns:retNS="http://mingda.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="link link01"/>
 
   </service>
 </deployment>

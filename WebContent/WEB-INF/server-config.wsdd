@@ -30,7 +30,8 @@
    <ns2:parameter qname="ns1:type" type="xsd:string"/>
    <ns2:parameter qname="ns1:date" type="xsd:string"/>
   </ns2:operation>
-  <ns1:parameter name="allowedMethods" value="link"/>
+  <ns1:operation name="link01" qname="ns2:link01" returnQName="ns2:link01Return" returnType="xsd:string" soapAction="" xmlns:ns2="http://mingda.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="link link01"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="LinkIn"/>
   <ns1:parameter name="className" value="com.mingda.LinkIn"/>
