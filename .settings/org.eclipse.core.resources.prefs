@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/com/MingdaSoft/ServiceMain.java=UTF-8
+encoding//src/com/MingdaSoft/ServiceMainLocator.java=UTF-8
+encoding//src/com/MingdaSoft/ServiceMainSoap.java=UTF-8
+encoding//src/com/MingdaSoft/ServiceMainSoapStub.java=UTF-8
 encoding//src/org/datacontract/schemas/_2004/_07/WcfMedExchange/CompositeType.java=UTF-8
 encoding//src/org/tempuri/BasicHttpBinding_IService1Stub.java=UTF-8
 encoding//src/org/tempuri/DataSet.java=UTF-8
