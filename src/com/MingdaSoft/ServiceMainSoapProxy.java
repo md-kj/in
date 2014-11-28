@@ -56,6 +56,12 @@ public class ServiceMainSoapProxy implements com.MingdaSoft.ServiceMainSoap {
     return serviceMainSoap.checkSSN(hospital_ID, SSN, photoFileName);
   }
   
+  public java.lang.String getJzMatchDes(java.lang.String SSN) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getJzMatchDes(SSN);
+  }
+  
   public java.lang.String setAssistFlag(java.lang.String bizID) throws java.rmi.RemoteException{
     if (serviceMainSoap == null)
       _initServiceMainSoapProxy();
@@ -74,10 +80,10 @@ public class ServiceMainSoapProxy implements com.MingdaSoft.ServiceMainSoap {
     return serviceMainSoap.setPhotoPath2(bizID, photoPath);
   }
   
-  public java.lang.String calculateCharge(java.lang.String BIZ_ID) throws java.rmi.RemoteException{
+  public java.lang.String calculateCharge(java.lang.String BIZ_ID, java.lang.String hosType) throws java.rmi.RemoteException{
     if (serviceMainSoap == null)
       _initServiceMainSoapProxy();
-    return serviceMainSoap.calculateCharge(BIZ_ID);
+    return serviceMainSoap.calculateCharge(BIZ_ID, hosType);
   }
   
   public java.lang.String getConfirmFlag(java.lang.String BIZID) throws java.rmi.RemoteException{
@@ -102,18 +108,6 @@ public class ServiceMainSoapProxy implements com.MingdaSoft.ServiceMainSoap {
     if (serviceMainSoap == null)
       _initServiceMainSoapProxy();
     return serviceMainSoap.bizInfoQue(hospitalID, SSN, operUID, operTimeBeg, operTimeEnd, chargeType, patientType);
-  }
-  
-  public java.lang.String bizInfoQuePrintList(java.lang.String hospitalID, java.lang.String SSN, java.lang.String operUID, java.lang.String operTimeBeg, java.lang.String operTimeEnd, java.lang.String patientType) throws java.rmi.RemoteException{
-    if (serviceMainSoap == null)
-      _initServiceMainSoapProxy();
-    return serviceMainSoap.bizInfoQuePrintList(hospitalID, SSN, operUID, operTimeBeg, operTimeEnd, patientType);
-  }
-  
-  public java.lang.String bizInfoQueV1(java.lang.String hospitalID, java.lang.String SSN, java.lang.String operUID, java.lang.String operTimeBeg, java.lang.String operTimeEnd, java.lang.String chargeType, java.lang.String patientType) throws java.rmi.RemoteException{
-    if (serviceMainSoap == null)
-      _initServiceMainSoapProxy();
-    return serviceMainSoap.bizInfoQueV1(hospitalID, SSN, operUID, operTimeBeg, operTimeEnd, chargeType, patientType);
   }
   
   public java.lang.String checkOutFlag(java.lang.String hospitalID, java.lang.String SSN, java.lang.String begDT, java.lang.String endDT) throws java.rmi.RemoteException{
@@ -192,6 +186,144 @@ public class ServiceMainSoapProxy implements com.MingdaSoft.ServiceMainSoap {
     if (serviceMainSoap == null)
       _initServiceMainSoapProxy();
     return serviceMainSoap.delBizRecord(bizid);
+  }
+  
+  public java.lang.String getPayItem() throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getPayItem();
+  }
+  
+  public java.lang.String getAssistIllness() throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getAssistIllness();
+  }
+  
+  public java.lang.String getAssistIllnessNC() throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getAssistIllnessNC();
+  }
+  
+  public java.lang.String getManualRecord(java.lang.String ssn, java.lang.String out_flag) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getManualRecord(ssn, out_flag);
+  }
+  
+  public java.lang.String setManualStatus(java.lang.String invoice) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.setManualStatus(invoice);
+  }
+  
+  public java.lang.String readMembers(java.lang.String SSN) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.readMembers(SSN);
+  }
+  
+  public java.lang.String getRuralRecord(java.lang.String ssn, java.lang.String hostid, java.lang.String begdt, java.lang.String enddt, java.lang.String accdesc, java.lang.String treatmenttype) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getRuralRecord(ssn, hostid, begdt, enddt, accdesc, treatmenttype);
+  }
+  
+  public java.lang.String setRuralStatus(java.lang.String invoice, java.lang.String oper, java.lang.String accdesc) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.setRuralStatus(invoice, oper, accdesc);
+  }
+  
+  public java.lang.String bizInfoAccPrintList(java.lang.String hospitalID, java.lang.String SSN, java.lang.String operUID, java.lang.String operTimeBeg, java.lang.String operTimeEnd, java.lang.String patientType, java.lang.String gatherFlag) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.bizInfoAccPrintList(hospitalID, SSN, operUID, operTimeBeg, operTimeEnd, patientType, gatherFlag);
+  }
+  
+  public java.lang.String webLicense(java.lang.String hostID) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.webLicense(hostID);
+  }
+  
+  public java.lang.String verifyRuralRepeat(java.lang.String SSN, java.lang.String accdate, java.lang.String allmoney, java.lang.String money) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.verifyRuralRepeat(SSN, accdate, allmoney, money);
+  }
+  
+  public java.lang.String getUserList(java.lang.String hospitalID) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getUserList(hospitalID);
+  }
+  
+  public java.lang.String getUserLists(java.lang.String hospitalID, java.lang.String id) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getUserLists(hospitalID, id);
+  }
+  
+  public java.lang.String verifyUserPassw(java.lang.String hospitalID, java.lang.String name, java.lang.String passw) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.verifyUserPassw(hospitalID, name, passw);
+  }
+  
+  public java.lang.String getUserInfo(java.lang.String hospitalID, java.lang.String name) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getUserInfo(hospitalID, name);
+  }
+  
+  public java.lang.String verifyUser(java.lang.String hospitalID, java.lang.String name) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.verifyUser(hospitalID, name);
+  }
+  
+  public java.lang.String getDeptList(java.lang.String deptid) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getDeptList(deptid);
+  }
+  
+  public java.lang.String getDeptID(java.lang.String name) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getDeptID(name);
+  }
+  
+  public java.lang.String getUserLogs(java.lang.String hospitalID, java.lang.String id, java.lang.String mode, java.lang.String work, java.lang.String begdt, java.lang.String enddt, java.lang.String status) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getUserLogs(hospitalID, id, mode, work, begdt, enddt, status);
+  }
+  
+  public java.lang.String getAccBizID(java.lang.String ssn, java.lang.String serialno) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getAccBizID(ssn, serialno);
+  }
+  
+  public java.lang.String getDbbxScope(java.lang.String paperid) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getDbbxScope(paperid);
+  }
+  
+  public java.lang.String getDbbxScopeMinValue(int ds) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getDbbxScopeMinValue(ds);
+  }
+  
+  public java.lang.String getDbbxValue(java.math.BigDecimal sumPreScope, java.math.BigDecimal zfyMony, java.math.BigDecimal tcMony, java.math.BigDecimal noPay, int wsFlag, int ds) throws java.rmi.RemoteException{
+    if (serviceMainSoap == null)
+      _initServiceMainSoapProxy();
+    return serviceMainSoap.getDbbxValue(sumPreScope, zfyMony, tcMony, noPay, wsFlag, ds);
   }
   
   
