@@ -33,7 +33,7 @@ public class CheckListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent arg0) {
 		System.out.println("服务开启时间：" + new Date());
 		MyScheduler scheduler = new MyScheduler();
-		scheduler.sendScheduler();
+		scheduler.sendSchedulers();
 	}
 
 }
