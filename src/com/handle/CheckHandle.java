@@ -216,17 +216,17 @@ public class CheckHandle {
 		String sql = "";
 		String fid = "";
 		try {
-			
+
 			con = db.getCsCon();
 			con.setAutoCommit(false);
 
-			sql ="select tc.fid from temp_ccc tc where tc.flag = '0'  and rownum = 1";
-			
+			sql = "select tc.fid from temp_ccc tc where tc.flag = '0'  and rownum = 1";
+
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			
-			if(rs.next()){
-				fid=rs.getString(1);
+
+			if (rs.next()) {
+				fid = rs.getString(1);
 			}
 			System.out.println(fid);
 			sql = "select a.* from (select func_15_18(fmi.fm_paperid) as idc, "
@@ -250,7 +250,8 @@ public class CheckHandle {
 					+ " on fmi.f_familyid = s2.ss_ot_id "
 					+ " and fn_checkidcard(fmi.fm_paperid) = 1 "
 					+ " and fn_checkidcard(func_15_18(fmi.fm_paperid)) = 1 "
-					+ " and s2.st_id = '31' " + " where fmi.f_familyid  ='"+fid+"') a";
+					+ " and s2.st_id = '31' " + " where fmi.f_familyid  ='"
+					+ fid + "') a";
 			System.out.println(sql);
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -259,7 +260,7 @@ public class CheckHandle {
 			 * STST 20150604 T1 2015/6/4 9:24:09 T2 2015/6/4 9:24:09 F 0 0 未处理 1
 			 * 已处理 F_FAMILYID 210182 CCC_ID 10835481
 			 */
-			
+
 			while (rs.next()) {
 				A e = new A();
 				e.setDs("1");
@@ -279,7 +280,8 @@ public class CheckHandle {
 			for (A s : onnos) {
 				String a = "";
 				a = iService1.setAssistStatusSingle(s.getIdcard(),
-						s.getMembername(), s.getFn(), s.getStat(), "201506");
+						s.getMembername(), s.getFn(), s.getTtt(), "201507");
+				System.out.println(s.getIdcard() + ">>>>>>>" + s.getTtt());
 				sql = " insert into ccc (idc, n, fn, s1, s2, ttt, stst, ctime, utime, f, ccc_id, fid, context01) "
 						+ " values ('"
 						+ s.getIdcard()

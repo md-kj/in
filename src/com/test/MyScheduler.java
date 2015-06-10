@@ -20,24 +20,24 @@ public class MyScheduler {
 	final String y = "2015";
 	final String m = "06";
 	final String d = "09";
-	final String h3 = "10";
-	final String m3 = "06";
+	final String h3 = "15";
+	final String m3 = "00";
 	final String s3 = "01";
 
 	public void sendSchedulers() {
-		final Timer timer = new Timer();
+		/*final Timer timer = new Timer();
 		final SubTimeTask stt = new SubTimeTask();
 		timer.schedule(new TimerTask() {
 			@Override
 			public void run() {
 				SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm:ss");
-				SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMddhhmmss");
+				SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMddHHmmss");
 				String datestr = sdf1.format(new Date());
 				String datestr1 = h1 + ":" + m1 + ":" + s1;
 				String datestr2 = h2 + ":" + m2 + ":" + s2;
 				String datestr3= y+m+d+h3+m3+s3;
 				String datestr4= sdf2.format(new Date());
-				System.out.println("计划任务监听：" + datestr);
+				System.out.println("计划任务监听：" + datestr+">>"+datestr3+">>"+datestr4);
 				if (datestr.equals(datestr1)) {
 					System.out.println("开始");
 					stt.sendScheduler();
@@ -53,14 +53,15 @@ public class MyScheduler {
 					stt.cancel();
 				}
 			}
-		}, new Date(), 1000);
-
+		}, new Date(), 1000);*/
+		 SubTimeTask stt = new SubTimeTask();
+		 stt.sendScheduler();
 	}
 
 	class SubTimeTask {
 		final Timer timer = new Timer();
-
 		public void sendScheduler() {
+		
 			timer.schedule(new TimerTask() {
 				@Override
 				public void run() {
@@ -84,7 +85,7 @@ public class MyScheduler {
 						}
 					}
 				}
-			}, new Date(), 15000);
+			}, new Date(), 10000);
 		}
 
 		public void cancel() {
