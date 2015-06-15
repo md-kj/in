@@ -22,7 +22,7 @@ public class Test {
 			String a = "";
 			// String a
 			// =iService1.getChronicDisePersonBatch((long)1,"22020101");
-			a = iService1.getMedicareInfoSingle("220204197006033022", "–Ï–„Œ∞");
+			a = iService1.getMedicareInfoSingle("220202200203182424", " ¢ ´”Ó");
 			System.out.println(a);
 			DocumentBuilderFactory factory = DocumentBuilderFactory
 					.newInstance();

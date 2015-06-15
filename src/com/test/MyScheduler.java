@@ -85,7 +85,7 @@ public class MyScheduler {
 						}
 					}
 				}
-			}, new Date(), 10000);
+			}, new Date(), 5000);
 		}
 
 		public void cancel() {

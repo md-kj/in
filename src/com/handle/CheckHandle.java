@@ -215,20 +215,26 @@ public class CheckHandle {
 
 		String sql = "";
 		String fid = "";
+		String tc_id = "";
 		try {
 
 			con = db.getCsCon();
 			con.setAutoCommit(false);
 
-			sql = "select tc.fid from temp_ccc tc where tc.flag = '0'  and rownum = 1";
+			sql = "select tc.fid, tc.tc_id from temp_ccc tc where tc.flag = '0'  and rownum = 1";
 
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 
 			if (rs.next()) {
 				fid = rs.getString(1);
+				tc_id = rs.getString(2);
 			}
-			System.out.println(fid);
+			System.out.println(fid + ">>>>>>" + tc_id);
+			sql = "update temp_ccc set flag='-1' where tc_id='" + tc_id + "'";
+			ps = con.prepareStatement(sql);
+			ps.execute();
+
 			sql = "select a.* from (select func_15_18(fmi.fm_paperid) as idc, "
 					+ " fmi.fm_name as n, "
 					+ " fmi.f_familyno as fn, "
@@ -250,7 +256,8 @@ public class CheckHandle {
 					+ " on fmi.f_familyid = s2.ss_ot_id "
 					+ " and fn_checkidcard(fmi.fm_paperid) = 1 "
 					+ " and fn_checkidcard(func_15_18(fmi.fm_paperid)) = 1 "
-					+ " and s2.st_id = '31' " + " where fmi.f_familyid  ='"
+					+ " and s2.st_id = '31' "
+					+ " where fmi.fm_personstate='Õý³£' and fmi.f_familyid  ='"
 					+ fid + "') a";
 			System.out.println(sql);
 			ps = con.prepareStatement(sql);
@@ -332,8 +339,7 @@ public class CheckHandle {
 				this.updateTestssn(s);
 
 			}
-			sql = "update temp_ccc   set flag = '1'  where temp_ccc.fid = '"
-					+ fid + "' and temp_ccc.flag = '0'";
+			sql = "update temp_ccc   set flag = '1'  where temp_ccc.tc_id='"+tc_id+"' ";
 			System.out.println(sql);
 			ps = con.prepareStatement(sql);
 			ps.execute();
