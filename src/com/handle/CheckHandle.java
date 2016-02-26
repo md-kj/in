@@ -221,7 +221,7 @@ public class CheckHandle {
 			con = db.getCsCon();
 			con.setAutoCommit(false);
 
-			sql = "select tc.fid, tc.tc_id from temp_ccc tc where tc.flag = '0'  and rownum = 1";
+			sql = "select fid, tc_id from ( select tc.fid, tc.tc_id  ,tc.ctime from temp_ccc tc where tc.flag = '0'    order by tc.ctime desc)  where rownum=1";
 
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -306,7 +306,8 @@ public class CheckHandle {
 						+ s.getStat()
 						+ "', sysdate, sysdate, '1', cc.nextval, '"
 						+ s.getFid() + "', '" + a + "') ";
-
+				ps = con.prepareStatement(sql);
+				ps.execute();
 				a = iService1.getMedicareInfoSingle(s.getIdcard(),
 						s.getMembername());
 
